@@ -22,9 +22,9 @@
                     <span class="btn-bell-badge" v-if="message"></span>
                 </div>
                 <!-- 用户头像 -->
-                <div class="user-avator">
+                <!-- <div class="user-avator">
                     <img src="../assets/img/img.jpg" />
-                </div>
+                </div> -->
                 <!-- 用户名下拉菜单 -->
                 <el-dropdown class="user-name" trigger="click" @command="handleCommand">
                     <span class="el-dropdown-link">
@@ -33,7 +33,7 @@
                     </span>
                     <template #dropdown>
                         <el-dropdown-menu>
-                            <el-dropdown-item divided command="loginout">退出登录</el-dropdown-item>
+                            <el-dropdown-item divided command="logout">退出登录</el-dropdown-item>
                         </el-dropdown-menu>
                     </template>
                 </el-dropdown>
@@ -46,13 +46,13 @@ export default {
     data() {
         return {
             fullscreen: false,
-            name: "linxin",
+            name: "",
             message: 2
         };
     },
     computed: {
         username() {
-            let username = localStorage.getItem("ms_username");
+            let username = localStorage.getItem("username");
             return username ? username : this.name;
         },
         collapse() {
@@ -62,8 +62,9 @@ export default {
     methods: {
         // 用户名下拉菜单选择事件
         handleCommand(command) {
-            if (command == "loginout") {
-                localStorage.removeItem("ms_username");
+            if (command === "logout") {
+                localStorage.removeItem("username");
+                localStorage.removeItem("usertype");
                 this.$router.push("/login");
             }
         },

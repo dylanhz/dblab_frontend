@@ -125,8 +125,8 @@ export default {
                 //     ]
                 // },
                 {
-                    icon: "el-icon-lx-global",
-                    index: "i18n",
+                    icon: "el-icon-user-solid",
+                    index: "account",
                     title: "用户管理"
                 },
                 {
