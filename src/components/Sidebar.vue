@@ -109,25 +109,25 @@ export default {
                     index: "charts",
                     title: "schart图表"
                 },
-                // {
-                //     icon: "el-icon-rank",
-                //     index: "6",
-                //     title: "拖拽组件",
-                //     subs: [
-                //         {
-                //             index: "drag",
-                //             title: "拖拽列表"
-                //         },
-                //         {
-                //             index: "dialog",
-                //             title: "拖拽弹框"
-                //         }
-                //     ]
-                // },
                 {
                     icon: "el-icon-user-solid",
                     index: "account",
                     title: "用户管理"
+                },
+                {
+                    icon: "el-icon-s-data",
+                    index: "data",
+                    title: "数据管理",
+                    subs: [
+                        {
+                            index: "upload",
+                            title: "数据导入"
+                        },
+                        {
+                            index: "export",
+                            title: "数据导出"
+                        }
+                    ]
                 },
                 {
                     icon: "el-icon-lx-warn",

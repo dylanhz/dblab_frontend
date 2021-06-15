@@ -70,7 +70,7 @@ export default {
         },
         // 侧边栏折叠
         collapseChage() {
-            this.$store.commit("hadndleCollapse", !this.collapse);
+            this.$store.commit("handleCollapse", !this.collapse);
         }
     },
     mounted() {

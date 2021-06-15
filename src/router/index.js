@@ -15,7 +15,7 @@ const routes = [{
             title: '系统首页'
         },
         component: () =>
-            import (
+            import(
                 /* webpackChunkName: "dashboard" */
                 "../views/Dashboard.vue")
     }, {
@@ -25,7 +25,7 @@ const routes = [{
             title: '表格'
         },
         component: () =>
-            import (
+            import(
                 /* webpackChunkName: "table" */
                 "../views/BaseTable.vue")
     }, {
@@ -35,7 +35,7 @@ const routes = [{
             title: '图表'
         },
         component: () =>
-            import (
+            import(
                 /* webpackChunkName: "charts" */
                 "../views/BaseCharts.vue")
     }, {
@@ -45,7 +45,7 @@ const routes = [{
             title: '表单'
         },
         component: () =>
-            import (
+            import(
                 /* webpackChunkName: "form" */
                 "../views/BaseForm.vue")
     }, {
@@ -55,7 +55,7 @@ const routes = [{
             title: 'tab标签'
         },
         component: () =>
-            import (
+            import(
                 /* webpackChunkName: "tabs" */
                 "../views/Tabs.vue")
     }, {
@@ -66,9 +66,19 @@ const routes = [{
             permission: true
         },
         component: () =>
-            import (
+            import(
                 /* webpackChunkName: "permission" */
                 "../views/Permission.vue")
+    }, {
+        path: "/icon",
+        name: "icon",
+        meta: {
+            title: '自定义图标'
+        },
+        component: () =>
+            import(
+                /* webpackChunkName: "icon" */
+                "../views/Icon.vue")
     }, {
         path: "/account",
         name: "account",
@@ -77,40 +87,35 @@ const routes = [{
             permission: true
         },
         component: () =>
-            import (
-                /* webpackChunkName: "account" */
+            import(
                 "../views/Account.vue")
-    }, {
-        path: "/accountlist",
-        name: "accountlist",
-        meta: {
-            title: '待审核用户列表',
-            permission: true
-        },
-        component: () =>
-            import (
-                /* webpackChunkName: "accountlist" */
-                "../views/AccountList.vue")
     }, {
         path: "/upload",
         name: "upload",
         meta: {
-            title: '上传插件'
+            title: '数据导入'
         },
         component: () =>
-            import (
-                /* webpackChunkName: "upload" */
+            import(
                 "../views/Upload.vue")
     }, {
-        path: "/icon",
-        name: "icon",
+        path: "/export",
+        name: "export",
         meta: {
-            title: '自定义图标'
+            title: '数据导出'
         },
         component: () =>
-            import (
-                /* webpackChunkName: "icon" */
-                "../views/Icon.vue")
+            import(
+                "../views/Export.vue")
+    }, {
+        path: "/tbcell",
+        name: "tbcell",
+        meta: {
+            title: 'tbCell'
+        },
+        component: () =>
+            import(
+                "../views/TbCell.vue")
     }, {
         path: '/404',
         name: '404',
@@ -118,7 +123,7 @@ const routes = [{
             title: '找不到页面'
         },
         component: () =>
-            import ( /* webpackChunkName: "404" */
+            import( /* webpackChunkName: "404" */
                 '../views/404.vue')
     }, {
         path: '/403',
@@ -127,7 +132,7 @@ const routes = [{
             title: '没有权限'
         },
         component: () =>
-            import ( /* webpackChunkName: "403" */
+            import( /* webpackChunkName: "403" */
                 '../views/403.vue')
     }]
 }, {
@@ -137,7 +142,7 @@ const routes = [{
         title: '登录'
     },
     component: () =>
-        import (
+        import(
             /* webpackChunkName: "login" */
             "../views/Login.vue")
 }];

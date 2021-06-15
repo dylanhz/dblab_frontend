@@ -1,20 +1,15 @@
 <template>
-  <div id="Upload">
+  <div id="Export">
     <div class="crumbs">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item>
           <i class="el-icon-s-data"></i> 数据管理
         </el-breadcrumb-item>
-        <el-breadcrumb-item>数据导入</el-breadcrumb-item>
+        <el-breadcrumb-item>数据导出</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="container">
-      <el-select
-        v-model="state"
-        placeholder="关系表"
-        style="width: 400px"
-        @change="handleChange"
-      >
+      <el-select v-model="state" placeholder="关系表" style="width: 400px">
         <el-option
           v-for="item in tableList"
           :key="item.label"
@@ -23,18 +18,9 @@
         >
         </el-option>
       </el-select>
-      <el-upload
-        v-show="this.state.label"
-        class="upload"
-        drag
-        :action="this.urlUpload"
-      >
-        <i class="el-icon-upload"></i>
-        <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-        <template #tip>
-          <div class="el-upload__tip">上传 xlsx 文件</div>
-        </template>
-      </el-upload>
+      <el-button type="success" @click="handleExport"
+        >下载<i class="el-icon-download el-icon--right"></i
+      ></el-button>
     </div>
   </div>
 </template>
@@ -45,7 +31,6 @@ import { tableList } from "../utils/table";
 export default {
   data() {
     return {
-      urlUpload: "",
       state: {
         label: "",
         value: "",
@@ -55,9 +40,6 @@ export default {
     };
   },
   methods: {
-    handleChange() {
-      this.urlUpload = `${BACKEND}/dataservice/${this.state.value}/upload`;
-    },
     handleExport() {
       if (this.state.name) {
         window.location.href = `${BACKEND}/dataservice/${this.state.value}/export?filename=${this.state.name}`;
