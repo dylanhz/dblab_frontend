@@ -1,6 +1,6 @@
 {
-  "name": "vue-manage-system",
-  "version": "5.0.0",
+  "name": "lte-analyze-system",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

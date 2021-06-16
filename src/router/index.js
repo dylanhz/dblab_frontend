@@ -3,82 +3,90 @@ import Home from "../views/Home.vue";
 
 const routes = [{
     path: '/',
-    redirect: '/dashboard'
+    redirect: '/welcome'
 }, {
     path: "/",
     name: "Home",
     component: Home,
     children: [{
-        path: "/dashboard",
-        name: "dashboard",
+    //     path: "/dashboard",
+    //     name: "dashboard",
+    //     meta: {
+    //         title: '系统首页'
+    //     },
+    //     component: () =>
+    //         import(
+    //             /* webpackChunkName: "dashboard" */
+    //             "../views/Dashboard.vue")
+    // }, {
+    //     path: "/table",
+    //     name: "basetable",
+    //     meta: {
+    //         title: '表格'
+    //     },
+    //     component: () =>
+    //         import(
+    //             /* webpackChunkName: "table" */
+    //             "../views/BaseTable.vue")
+    // }, {
+    //     path: "/charts",
+    //     name: "basecharts",
+    //     meta: {
+    //         title: '图表'
+    //     },
+    //     component: () =>
+    //         import(
+    //             /* webpackChunkName: "charts" */
+    //             "../views/BaseCharts.vue")
+    // }, {
+    //     path: "/form",
+    //     name: "baseform",
+    //     meta: {
+    //         title: '表单'
+    //     },
+    //     component: () =>
+    //         import(
+    //             /* webpackChunkName: "form" */
+    //             "../views/BaseForm.vue")
+    // }, {
+    //     path: "/tabs",
+    //     name: "tabs",
+    //     meta: {
+    //         title: 'tab标签'
+    //     },
+    //     component: () =>
+    //         import(
+    //             /* webpackChunkName: "tabs" */
+    //             "../views/Tabs.vue")
+    // }, {
+    //     path: "/permission",
+    //     name: "permission",
+    //     meta: {
+    //         title: '权限管理',
+    //         permission: true
+    //     },
+    //     component: () =>
+    //         import(
+    //             /* webpackChunkName: "permission" */
+    //             "../views/Permission.vue")
+    // }, {
+    //     path: "/icon",
+    //     name: "icon",
+    //     meta: {
+    //         title: '自定义图标'
+    //     },
+    //     component: () =>
+    //         import(
+    //             "../views/Icon.vue")
+    // }, {
+        path: "/welcome",
+        name: "welcome",
         meta: {
-            title: '系统首页'
+            title: '欢迎页'
         },
         component: () =>
             import(
-                /* webpackChunkName: "dashboard" */
-                "../views/Dashboard.vue")
-    }, {
-        path: "/table",
-        name: "basetable",
-        meta: {
-            title: '表格'
-        },
-        component: () =>
-            import(
-                /* webpackChunkName: "table" */
-                "../views/BaseTable.vue")
-    }, {
-        path: "/charts",
-        name: "basecharts",
-        meta: {
-            title: '图表'
-        },
-        component: () =>
-            import(
-                /* webpackChunkName: "charts" */
-                "../views/BaseCharts.vue")
-    }, {
-        path: "/form",
-        name: "baseform",
-        meta: {
-            title: '表单'
-        },
-        component: () =>
-            import(
-                /* webpackChunkName: "form" */
-                "../views/BaseForm.vue")
-    }, {
-        path: "/tabs",
-        name: "tabs",
-        meta: {
-            title: 'tab标签'
-        },
-        component: () =>
-            import(
-                /* webpackChunkName: "tabs" */
-                "../views/Tabs.vue")
-    }, {
-        path: "/permission",
-        name: "permission",
-        meta: {
-            title: '权限管理',
-            permission: true
-        },
-        component: () =>
-            import(
-                /* webpackChunkName: "permission" */
-                "../views/Permission.vue")
-    }, {
-        path: "/icon",
-        name: "icon",
-        meta: {
-            title: '自定义图标'
-        },
-        component: () =>
-            import(
-                /* webpackChunkName: "icon" */
-                "../views/Icon.vue")
+                "../views/Welcome.vue")
     }, {
         path: "/account",
         name: "account",
@@ -89,6 +97,16 @@ const routes = [{
         component: () =>
             import(
                 "../views/Account.vue")
+    }, {
+        path: "/system",
+        name: "system",
+        meta: {
+            title: '系统管理',
+            permission: true
+        },
+        component: () => {
+            window.open("http://be.dblab.why2001.top:8848/nacos");
+        }
     }, {
         path: "/upload",
         name: "upload",
@@ -108,6 +126,15 @@ const routes = [{
             import(
                 "../views/Export.vue")
     }, {
+        path: "/analyze",
+        name: "analyze",
+        meta: {
+            title: '数据分析'
+        },
+        component: () =>
+            import(
+                "../views/Analyze.vue")
+    }, {
         path: "/tbcell",
         name: "tbcell",
         meta: {
@@ -116,6 +143,24 @@ const routes = [{
         component: () =>
             import(
                 "../views/TbCell.vue")
+    }, {
+        path: "/tbcellkpi",
+        name: "tbcellkpi",
+        meta: {
+            title: 'tbCellKPI'
+        },
+        component: () =>
+            import(
+                "../views/TbCellKPI.vue")
+    }, {
+        path: "/tbprb",
+        name: "tbprb",
+        meta: {
+            title: 'tbPRB'
+        },
+        component: () =>
+            import(
+                "../views/TbPRB.vue")
     }, {
         path: '/404',
         name: '404',

@@ -108,7 +108,7 @@
           </template>
         </el-table-column>
       </el-table>
-      <div class="pagination">
+      <!-- <div class="pagination">
         <el-pagination
           background
           layout="total, prev, pager, next"
@@ -117,7 +117,7 @@
           :total="pageTotal"
           @current-change="handlePageChange"
         ></el-pagination>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -128,10 +128,10 @@ import request from "../utils/request";
 export default {
   data() {
     return {
-      query: {
-        pageIndex: 1,
-        pageSize: 10,
-      },
+      // query: {
+      //   pageIndex: 1,
+      //   pageSize: 10,
+      // },
       tableData: [],
       multipleSelection: [],
       delList: [],
@@ -250,10 +250,10 @@ export default {
     },
     // TODO:
     // 分页导航
-    handlePageChange(val) {
-      this.$set(this.query, "pageIndex", val);
-      this.getData();
-    },
+    // handlePageChange(val) {
+    //   this.$set(this.query, "pageIndex", val);
+    //   this.getData();
+    // },
   },
 };
 </script>
