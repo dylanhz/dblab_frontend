@@ -8,7 +8,7 @@
         <el-breadcrumb-item>tbPRB</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div class="container">
+    <div class="container" style="min-width: 1200px">
       <el-container>
         <el-header>
           <el-form :inline="true" model="formdata">
@@ -104,6 +104,7 @@
               <el-col :span="4">
                 <el-select
                   v-model="chart.index"
+                  filterable
                   placeholder="PRB编号"
                   @change="drawPRB"
                 >
@@ -177,7 +178,7 @@ export default {
         hidden: true,
         granularity: "prb",
         start: 0,
-        end: 20,
+        end: 100,
       },
     };
   },
@@ -264,7 +265,7 @@ export default {
               this.chart.series.push({
                 name: this.seriesList[i],
                 type: "line",
-                smooth: true,
+                smooth: false,
                 data: [],
               });
             }
@@ -330,7 +331,7 @@ export default {
           boundaryGap: false,
           data: this.chart.xAxis,
         },
-        yAxis: {},
+        yAxis: { scale: true },
         series: [this.chart.series[this.chart.index]],
       };
       chart.setOption(option);

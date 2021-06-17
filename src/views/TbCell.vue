@@ -83,13 +83,6 @@
         @selection-change="handleSelectionChange"
       >
         <el-table-column
-          fixed
-          prop="id"
-          label="ID"
-          width="55"
-          align="center"
-        ></el-table-column>
-        <el-table-column
           prop="city"
           label="地区名称"
           align="center"

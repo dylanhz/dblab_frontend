@@ -8,7 +8,7 @@
         <el-breadcrumb-item>tbCellKPI</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div class="container">
+    <div class="container" style="min-width: 1200px">
       <el-container>
         <el-header>
           <el-form :inline="true" model="formdata">
@@ -360,7 +360,7 @@ export default {
               this.chart.series.push({
                 name: this.series[i].value,
                 type: "line",
-                smooth: true,
+                smooth: false,
                 data: [],
               });
             }
@@ -426,7 +426,7 @@ export default {
           boundaryGap: false,
           data: this.chart.xAxis,
         },
-        yAxis: {},
+        yAxis: { scale: true },
         series: [this.chart.series[this.chart.index]],
       };
       console.log(option);
